@@ -1,0 +1,153 @@
+{
+  "_comment": "CRICKET IQ analytics configuration. All thresholds and weights used by the pipeline live here. Edit values and re-run `python run_pipeline.py`.",
+
+  "season": {
+    "start_date": "2026-01-01",
+    "end_date": null,
+    "exclude_competition_patterns": ["\\bhundred\\b"]
+  },
+
+  "genders": {
+    "men":   {"label": "Men",   "folder": "men"},
+    "women": {"label": "Women", "folder": "women"}
+  },
+
+  "eligibility": {
+    "min_distinct_matches": 11,
+    "use_upstream_appearance_counts": true
+  },
+
+  "phases": {
+    "powerplay": {"label": "Powerplay", "first_over": 1,  "last_over": 6},
+    "middle":    {"label": "Middle overs", "first_over": 7,  "last_over": 15},
+    "death":     {"label": "Death overs", "first_over": 16, "last_over": 20}
+  },
+
+  "position_groups": {
+    "top":    {"label": "Top order (1-3)",    "positions": [1, 2, 3]},
+    "middle": {"label": "Middle order (4-7)", "positions": [4, 5, 6, 7]},
+    "lower":  {"label": "Lower order (8-11)", "positions": [8, 9, 10, 11]}
+  },
+
+  "dismissals": {
+    "bowler_credited": ["bowled", "caught", "caught and bowled", "lbw", "stumped", "hit wicket"],
+    "not_out_kinds": ["retired hurt", "retired not out"]
+  },
+
+  "match": {
+    "full_innings_balls": 120,
+    "count_super_over_winner_as_win": true,
+    "close_finish": {"max_run_margin": 10, "max_balls_remaining": 6, "max_wickets_in_hand": 2},
+    "low_scoring_first_innings_quantile": 0.25
+  },
+
+  "pressure": {
+    "_doc": "A delivery is a pressure delivery if it meets the chase rule OR the collapse rule. Reduced-over (rain-affected) chases are excluded from the chase rule because revised targets are not in the data.",
+    "chase_min_required_rate": 9.0,
+    "chase_max_required_rate": 18.0,
+    "chase_late_balls_remaining": 30,
+    "chase_late_max_required_rate": 15.0,
+    "collapse_rules": [
+      {"min_wickets_down": 3, "max_legal_balls_bowled": 48},
+      {"min_wickets_down": 5, "max_legal_balls_bowled": 90}
+    ],
+    "pressure_partnership_min_balls": 1
+  },
+
+  "baselines": {
+    "_doc": "Expected values use competition + phase (+ batting-position group for batters) averages. When a bucket has fewer than min_balls deliveries, the next broader level is used.",
+    "min_balls": 600,
+    "min_balls_pressure": 400
+  },
+
+  "batting": {
+    "meaningful_innings": {"min_runs": 20, "alt_min_runs": 10, "alt_min_strike_rate": 150.0},
+    "impact_innings": {"min_runs": 15, "min_runs_above_expected": 8.0},
+    "consistency_min_innings": 5,
+    "leaderboard_min_balls": 60
+  },
+
+  "bowling": {
+    "consistency_min_balls_per_innings": 12,
+    "consistency_min_innings": 5,
+    "leaderboard_min_balls": 60,
+    "good_spell_min_wickets": 2
+  },
+
+  "winning": {
+    "wicket_value_runs": 10.0,
+    "significant": {"min_run_share_pct": 20.0, "min_runs": 20, "min_wickets": 2, "min_balls_bowled": 18, "min_runs_saved": 5.0, "min_match_score": 8.0},
+    "exceptional_min_match_score": 15.0,
+    "match_winning_innings": {"min_runs": 25, "min_runs_above_expected": 12.0},
+    "match_winning_bowling": {"min_value": 10.0, "min_wickets": 2, "alt_min_runs_saved": 8.0}
+  },
+
+  "impact": {
+    "_doc": "EXPERIMENTAL composite indices. Weights are an initial transparent starting point, not scientifically established values. Components are z-scored within gender, shrunk toward average for small samples, and converted to 0-100 percentiles.",
+    "batting_weights": {"runs_above_expected_per_innings": 0.35, "strike_rate_vs_expected": 0.20, "average_vs_expected": 0.20, "team_run_share": 0.15, "consistency": 0.10},
+    "bowling_weights": {"runs_saved_per_24": 0.35, "wickets_above_expected_per_24": 0.30, "dot_ball_vs_expected": 0.10, "boundary_suppression": 0.10, "consistency": 0.15},
+    "winning_weights": {"winning_run_share": 0.30, "winning_wicket_share": 0.30, "match_winning_frequency": 0.25, "avg_score_in_wins": 0.15},
+    "overall_weights": {"batting": 0.40, "bowling": 0.35, "pressure": 0.15, "fielding": 0.10},
+    "fielding_enabled": false,
+    "shrinkage_balls": {"batting": 120, "bowling": 120, "pressure": 60},
+    "min_balls": {"batting": 60, "bowling": 60, "pressure": 30},
+    "min_matches_winning": 5
+  },
+
+  "position_effectiveness": {
+    "_doc": "EXPERIMENTAL. Components standardised within each batting position group.",
+    "weights": {"run_production": 0.35, "team_contribution": 0.25, "scoring_efficiency": 0.25, "pressure_performance": 0.15},
+    "min_innings": 5,
+    "shrinkage_innings": 10
+  },
+
+  "roles": {
+    "primary": {"batter_min_balls_per_innings": 8, "bowler_min_innings_share": 0.5, "bowler_min_balls_per_innings": 12, "batter_max_median_position": 7},
+    "batter": {
+      "powerplay_aggressor": {"min_phase_ball_share": 0.40, "min_phase_balls": 60, "min_sr_index": 1.08},
+      "top_order_stabilizer": {"max_median_position": 3, "min_avg_index": 1.10, "min_innings": 8},
+      "middle_order_controller": {"min_phase_ball_share": 0.40, "min_phase_balls": 60, "min_sr_index": 1.0, "max_dot_index": 1.0},
+      "finisher": {"min_phase_ball_share": 0.30, "min_phase_balls": 40, "min_median_position": 4, "min_sr_index": 1.08},
+      "pressure_specialist": {"min_pressure_balls": 60, "min_pressure_sr_delta": 18.0},
+      "flexible_batter": {"min_distinct_positions": 4, "min_innings_per_position": 3},
+      "spin_attacker": {"min_balls_vs_spin": 60, "min_sr_index_vs_spin": 1.10}
+    },
+    "bowler": {
+      "powerplay_wicket_taker": {"min_phase_ball_share": 0.30, "min_phase_balls": 60, "min_wicket_index": 1.15},
+      "middle_over_controller": {"min_phase_ball_share": 0.40, "min_phase_balls": 60, "max_economy_index": 0.93},
+      "spin_pressure_specialist": {"min_balls": 120, "min_dot_index": 1.05, "max_economy_index": 0.95},
+      "death_over_specialist": {"min_phase_ball_share": 0.30, "min_phase_balls": 48, "max_economy_index": 0.95},
+      "boundary_suppressor": {"min_balls": 120, "max_boundary_index": 0.85},
+      "partnership_breaker": {"min_breaks": 6, "min_partnership_runs": 30}
+    }
+  },
+
+  "competitions": {
+    "_doc": "short: display label for known competitions (regex on the competition name, case-insensitive). franchise_patterns: competitions treated as franchise leagues. Any match where both teams are national teams (see countries.json) is classified as an International T20I.",
+    "international_label": "International T20Is",
+    "short_names": [
+      ["^indian premier league$", "IPL"],
+      ["^women's premier league$", "WPL"],
+      ["^pakistan super league$", "PSL"],
+      ["^big bash league$", "BBL"],
+      ["^women's big bash league$", "WBBL"],
+      ["^sa20$", "SA20"],
+      ["^international league t20$", "ILT20"],
+      ["^caribbean premier league$", "CPL"],
+      ["^women's caribbean premier league$", "WCPL"],
+      ["^bangladesh premier league$", "BPL"],
+      ["^lanka premier league$", "LPL"],
+      ["^major league cricket$", "MLC"],
+      ["^nepal premier league$", "NPL"],
+      ["^vitality blast men$", "Vitality Blast"],
+      ["^vitality blast women$", "Vitality Blast Women"],
+      ["^super smash$", "Super Smash"],
+      ["^women's super smash$", "Women's Super Smash"],
+      ["^european t20 premier league$", "ETPL"]
+    ],
+    "franchise_patterns": [
+      "premier league", "super league", "big bash", "^sa20$", "international league t20",
+      "major league cricket", "global t20", "^the blaze"
+    ]
+  }
+}

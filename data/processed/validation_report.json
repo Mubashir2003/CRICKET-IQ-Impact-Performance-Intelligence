@@ -1,0 +1,1076 @@
+{
+  "generated": "2026-11-17T03:25:33",
+  "checks": [
+    {
+      "name": "Deliveries reference known matches",
+      "status": "pass",
+      "compared": 361674,
+      "mismatches": 0,
+      "detail": "",
+      "examples": []
+    },
+    {
+      "name": "Delivery teams match fixture teams",
+      "status": "pass",
+      "compared": 3165,
+      "mismatches": 0,
+      "detail": "",
+      "examples": []
+    },
+    {
+      "name": "Winner is one of the two teams",
+      "status": "pass",
+      "compared": 1553,
+      "mismatches": 0,
+      "detail": "",
+      "examples": []
+    },
+    {
+      "name": "Over numbers within 1-20",
+      "status": "pass",
+      "compared": 361674,
+      "mismatches": 0,
+      "detail": "",
+      "examples": []
+    },
+    {
+      "name": "No over has more than 6 legal balls",
+      "status": "warn",
+      "compared": 57634,
+      "mismatches": 13,
+      "detail": "",
+      "examples": [
+        {
+          "match_id": "mens_1532658",
+          "innings_number": "2",
+          "over": "7",
+          "legal": "7"
+        },
+        {
+          "match_id": "mens_1535415",
+          "innings_number": "1",
+          "over": "1",
+          "legal": "7"
+        },
+        {
+          "match_id": "mens_1535415",
+          "innings_number": "1",
+          "over": "5",
+          "legal": "7"
+        },
+        {
+          "match_id": "mens_1539472",
+          "innings_number": "2",
+          "over": "18",
+          "legal": "7"
+        },
+        {
+          "match_id": "womens_1534066",
+          "innings_number": "1",
+          "over": "3",
+          "legal": "7"
+        }
+      ]
+    },
+    {
+      "name": "No innings has more than 10 wickets",
+      "status": "pass",
+      "compared": 3165,
+      "mismatches": 0,
+      "detail": "",
+      "examples": []
+    },
+    {
+      "name": "Delivery total = batter runs + extras",
+      "status": "pass",
+      "compared": 361674,
+      "mismatches": 0,
+      "detail": "",
+      "examples": []
+    },
+    {
+      "name": "Innings total = batter runs + extras",
+      "status": "pass",
+      "compared": 3165,
+      "mismatches": 0,
+      "detail": "",
+      "examples": []
+    },
+    {
+      "name": "Sum of batting scorecard = innings batter runs",
+      "status": "pass",
+      "compared": 3165,
+      "mismatches": 0,
+      "detail": "",
+      "examples": []
+    },
+    {
+      "name": "Bowler runs conceded = batter runs + wides + no-balls",
+      "status": "pass",
+      "compared": 3165,
+      "mismatches": 0,
+      "detail": "",
+      "examples": []
+    },
+    {
+      "name": "Batting dismissals = innings wickets",
+      "status": "pass",
+      "compared": 3165,
+      "mismatches": 0,
+      "detail": "",
+      "examples": []
+    },
+    {
+      "name": "Partnership runs sum to innings total",
+      "status": "pass",
+      "compared": 3165,
+      "mismatches": 0,
+      "detail": "",
+      "examples": []
+    },
+    {
+      "name": "Partnership = batter 1 + batter 2 + extras",
+      "status": "pass",
+      "compared": 22510,
+      "mismatches": 0,
+      "detail": "",
+      "examples": []
+    },
+    {
+      "name": "Batting scorecards: rows present in reconstruction",
+      "status": "pass",
+      "compared": 14229,
+      "mismatches": 0,
+      "detail": "Upstream rows with no reconstructed counterpart",
+      "examples": []
+    },
+    {
+      "name": "Batting scorecards: runs",
+      "status": "pass",
+      "compared": 14229,
+      "mismatches": 0,
+      "detail": "upstream 'runs_up' vs reconstructed 'runs'",
+      "examples": []
+    },
+    {
+      "name": "Batting scorecards: balls",
+      "status": "pass",
+      "compared": 14229,
+      "mismatches": 0,
+      "detail": "upstream 'balls_faced' vs reconstructed 'balls'",
+      "examples": []
+    },
+    {
+      "name": "Batting scorecards: fours",
+      "status": "pass",
+      "compared": 14229,
+      "mismatches": 0,
+      "detail": "upstream 'fours_up' vs reconstructed 'fours'",
+      "examples": []
+    },
+    {
+      "name": "Batting scorecards: sixes",
+      "status": "pass",
+      "compared": 14229,
+      "mismatches": 0,
+      "detail": "upstream 'sixes_up' vs reconstructed 'sixes'",
+      "examples": []
+    },
+    {
+      "name": "Batting scorecards: dismissals",
+      "status": "pass",
+      "compared": 14229,
+      "mismatches": 0,
+      "detail": "18 upstream rows count 'retired hurt / retired not out' as a dismissal; under the Laws these are not-out and the reconstruction treats them so",
+      "examples": []
+    },
+    {
+      "name": "Batting scorecards: batting position",
+      "status": "info",
+      "compared": 14229,
+      "mismatches": 913,
+      "detail": "Reconstruction orders batters by arrival at the crease (striker or non-striker), confirmed by partnership order. Upstream differs mainly where a new batter arrived at the non-striker's end.",
+      "examples": [
+        {
+          "match_id": "mens_1496587",
+          "innings_number": "1",
+          "player": "KTH Ratnayake",
+          "batting_position": "7",
+          "position": "8"
+        },
+        {
+          "match_id": "mens_1496587",
+          "innings_number": "1",
+          "player": "PWH de Silva",
+          "batting_position": "8",
+          "position": "7"
+        },
+        {
+          "match_id": "mens_1496587",
+          "innings_number": "1",
+          "player": "N Thushara",
+          "batting_position": "10",
+          "position": "11"
+        },
+        {
+          "match_id": "mens_1496587",
+          "innings_number": "1",
+          "player": "D Madushanka",
+          "batting_position": "11",
+          "position": "10"
+        },
+        {
+          "match_id": "mens_1529792",
+          "innings_number": "2",
+          "player": "KN Chaddha",
+          "batting_position": "2",
+          "position": "3"
+        }
+      ]
+    },
+    {
+      "name": "Bowling scorecards: rows present in reconstruction",
+      "status": "pass",
+      "compared": 10348,
+      "mismatches": 0,
+      "detail": "Upstream rows with no reconstructed counterpart",
+      "examples": []
+    },
+    {
+      "name": "Bowling scorecards: runs",
+      "status": "pass",
+      "compared": 10348,
+      "mismatches": 0,
+      "detail": "upstream 'runs_conceded' vs reconstructed 'runs'",
+      "examples": []
+    },
+    {
+      "name": "Bowling scorecards: balls",
+      "status": "pass",
+      "compared": 10348,
+      "mismatches": 0,
+      "detail": "upstream 'legal_balls' vs reconstructed 'balls'",
+      "examples": []
+    },
+    {
+      "name": "Bowling scorecards: wkts",
+      "status": "pass",
+      "compared": 10348,
+      "mismatches": 0,
+      "detail": "upstream 'wickets' vs reconstructed 'wkts'",
+      "examples": []
+    },
+    {
+      "name": "Bowling scorecards: dots_strict",
+      "status": "pass",
+      "compared": 10348,
+      "mismatches": 0,
+      "detail": "upstream 'dot_balls' vs reconstructed 'dots_strict'",
+      "examples": []
+    },
+    {
+      "name": "Bowling scorecards: fours",
+      "status": "pass",
+      "compared": 10348,
+      "mismatches": 0,
+      "detail": "upstream 'fours_conceded' vs reconstructed 'fours'",
+      "examples": []
+    },
+    {
+      "name": "Bowling scorecards: sixes",
+      "status": "pass",
+      "compared": 10348,
+      "mismatches": 0,
+      "detail": "upstream 'sixes_conceded' vs reconstructed 'sixes'",
+      "examples": []
+    },
+    {
+      "name": "Bowling dot-ball definition",
+      "status": "info",
+      "compared": 0,
+      "mismatches": 0,
+      "detail": "Dashboard dot balls follow the bowler convention (legal ball, no runs charged to the bowler - byes/leg-byes count as dots). Upstream excludes byes/leg-byes; 'dots_strict' reproduces the upstream definition for this check.",
+      "examples": []
+    },
+    {
+      "name": "Partnerships (by batting pair): rows present in reconstruction",
+      "status": "pass",
+      "compared": 10045,
+      "mismatches": 0,
+      "detail": "Upstream rows with no reconstructed counterpart",
+      "examples": []
+    },
+    {
+      "name": "Partnerships (by batting pair): runs",
+      "status": "pass",
+      "compared": 10045,
+      "mismatches": 0,
+      "detail": "upstream 'runs_up' vs reconstructed 'runs'",
+      "examples": []
+    },
+    {
+      "name": "Partnerships (by batting pair): balls",
+      "status": "pass",
+      "compared": 10045,
+      "mismatches": 0,
+      "detail": "upstream 'balls_up' vs reconstructed 'balls'",
+      "examples": []
+    },
+    {
+      "name": "Partnership coverage",
+      "status": "info",
+      "compared": 22506,
+      "mismatches": 12461,
+      "detail": "Reconstruction has 22506 batting-pair stands vs 10045 in the upstream file. Every upstream stand is matched above; the upstream file covers only a subset of stands, so partnership analytics use the full ball-by-ball reconstruction.",
+      "examples": []
+    },
+    {
+      "name": "Player-match records (non-super-over): rows present in reconstruction",
+      "status": "pass",
+      "compared": 18137,
+      "mismatches": 0,
+      "detail": "Upstream rows with no reconstructed counterpart",
+      "examples": []
+    },
+    {
+      "name": "Player-match records (non-super-over): bat_r",
+      "status": "pass",
+      "compared": 18137,
+      "mismatches": 0,
+      "detail": "upstream 'batting_runs' vs reconstructed 'bat_r'",
+      "examples": []
+    },
+    {
+      "name": "Player-match records (non-super-over): bowl_w",
+      "status": "pass",
+      "compared": 18137,
+      "mismatches": 0,
+      "detail": "upstream 'bowling_wickets' vs reconstructed 'bowl_w'",
+      "examples": []
+    }
+  ],
+  "issues": [
+    {
+      "gender": "men",
+      "table": "players",
+      "severity": "info",
+      "message": "Eligible players (11+ matches): 712 of 2953",
+      "count": 0
+    },
+    {
+      "gender": "women",
+      "table": "players",
+      "severity": "info",
+      "message": "Eligible players (11+ matches): 346 of 1430",
+      "count": 0
+    }
+  ],
+  "schema": [
+    {
+      "gender": "men",
+      "table": "matches",
+      "file": "matches.csv",
+      "rows": 1075,
+      "columns": [
+        "match_id",
+        "gender",
+        "date",
+        "match_type",
+        "competition",
+        "season",
+        "venue",
+        "city",
+        "team_1",
+        "team_2",
+        "winner",
+        "result_type"
+      ],
+      "detected_types": {
+        "match_id": "str",
+        "gender": "str",
+        "date": "date",
+        "match_type": "str",
+        "competition": "str",
+        "season": "str",
+        "venue": "str",
+        "city": "str",
+        "team_1": "str",
+        "team_2": "str",
+        "winner": "str",
+        "result_type": "str"
+      },
+      "renamed": {},
+      "extra_columns": []
+    },
+    {
+      "gender": "men",
+      "table": "deliveries",
+      "file": "deliveries.csv",
+      "rows": 242594,
+      "columns": [
+        "match_id",
+        "gender",
+        "date",
+        "competition",
+        "innings_number",
+        "batting_team",
+        "bowling_team",
+        "over",
+        "delivery_in_over",
+        "batter",
+        "non_striker",
+        "bowler",
+        "batter_runs",
+        "extras",
+        "total_runs",
+        "wides",
+        "no_balls",
+        "is_legal_delivery",
+        "is_wicket",
+        "dismissal_kinds",
+        "players_out"
+      ],
+      "detected_types": {
+        "match_id": "str",
+        "gender": "str",
+        "date": "date",
+        "competition": "str",
+        "innings_number": "int",
+        "batting_team": "str",
+        "bowling_team": "str",
+        "over": "int",
+        "delivery_in_over": "int",
+        "batter": "str",
+        "non_striker": "str",
+        "bowler": "str",
+        "batter_runs": "int",
+        "extras": "int",
+        "total_runs": "int",
+        "wides": "int",
+        "no_balls": "int",
+        "is_legal_delivery": "bool",
+        "is_wicket": "bool",
+        "dismissal_kinds": "str",
+        "players_out": "str"
+      },
+      "renamed": {},
+      "extra_columns": []
+    },
+    {
+      "gender": "men",
+      "table": "batting_innings",
+      "file": "batting_innings.csv",
+      "rows": 9893,
+      "columns": [
+        "match_id",
+        "gender",
+        "date",
+        "competition",
+        "innings_number",
+        "team",
+        "player",
+        "batting_position",
+        "runs",
+        "balls_faced",
+        "fours",
+        "sixes",
+        "strike_rate",
+        "dismissals",
+        "not_out",
+        "team_innings_runs",
+        "matches_played"
+      ],
+      "detected_types": {
+        "match_id": "str",
+        "innings_number": "int",
+        "team": "str",
+        "player": "str",
+        "batting_position": "int",
+        "runs": "int",
+        "balls_faced": "int",
+        "fours": "int",
+        "sixes": "int",
+        "dismissals": "int",
+        "not_out": "bool",
+        "team_innings_runs": "int"
+      },
+      "renamed": {},
+      "extra_columns": [
+        "date",
+        "competition",
+        "strike_rate",
+        "matches_played"
+      ]
+    },
+    {
+      "gender": "men",
+      "table": "bowling_innings",
+      "file": "bowling_innings.csv",
+      "rows": 7049,
+      "columns": [
+        "match_id",
+        "gender",
+        "date",
+        "competition",
+        "innings_number",
+        "team",
+        "player",
+        "runs_conceded",
+        "legal_balls",
+        "overs",
+        "wickets",
+        "economy",
+        "bowling_average",
+        "bowling_strike_rate",
+        "dot_balls",
+        "fours_conceded",
+        "sixes_conceded",
+        "team_innings_runs",
+        "matches_played"
+      ],
+      "detected_types": {
+        "match_id": "str",
+        "innings_number": "int",
+        "team": "str",
+        "player": "str",
+        "runs_conceded": "int",
+        "legal_balls": "int",
+        "wickets": "int",
+        "dot_balls": "int",
+        "fours_conceded": "int",
+        "sixes_conceded": "int"
+      },
+      "renamed": {},
+      "extra_columns": [
+        "date",
+        "competition",
+        "overs",
+        "economy",
+        "bowling_average",
+        "bowling_strike_rate",
+        "team_innings_runs",
+        "matches_played"
+      ]
+    },
+    {
+      "gender": "men",
+      "table": "partnerships",
+      "file": "partnerships.csv",
+      "rows": 6891,
+      "columns": [
+        "match_id",
+        "gender",
+        "innings_number",
+        "batting_team",
+        "partnership_number",
+        "player_1",
+        "player_2",
+        "runs",
+        "legal_balls",
+        "wickets"
+      ],
+      "detected_types": {
+        "match_id": "str",
+        "innings_number": "int",
+        "batting_team": "str",
+        "partnership_number": "int",
+        "player_1": "str",
+        "player_2": "str",
+        "runs": "int",
+        "legal_balls": "int",
+        "wickets": "int"
+      },
+      "renamed": {},
+      "extra_columns": []
+    },
+    {
+      "gender": "men",
+      "table": "player_match",
+      "file": "player_match.csv",
+      "rows": 13217,
+      "columns": [
+        "match_id",
+        "gender",
+        "team",
+        "player",
+        "batting_runs",
+        "batting_balls",
+        "bowling_wickets",
+        "bowling_runs_conceded",
+        "bowling_balls",
+        "matches_played",
+        "eligible"
+      ],
+      "detected_types": {
+        "match_id": "str",
+        "team": "str",
+        "player": "str",
+        "batting_runs": "float",
+        "batting_balls": "float",
+        "bowling_wickets": "float",
+        "bowling_runs_conceded": "float",
+        "bowling_balls": "float"
+      },
+      "renamed": {},
+      "extra_columns": [
+        "matches_played",
+        "eligible"
+      ]
+    },
+    {
+      "gender": "men",
+      "table": "player_appearances",
+      "file": "player_appearances.csv",
+      "rows": 3021,
+      "columns": [
+        "player",
+        "matches_played",
+        "eligible"
+      ],
+      "detected_types": {
+        "player": "str",
+        "matches_played": "int",
+        "eligible": "bool"
+      },
+      "renamed": {},
+      "extra_columns": []
+    },
+    {
+      "gender": "men",
+      "table": "excluded_players",
+      "file": "excluded_players.csv",
+      "rows": 2309,
+      "columns": [
+        "player",
+        "matches_played",
+        "eligible"
+      ],
+      "detected_types": {
+        "player": "str",
+        "matches_played": "int",
+        "eligible": "bool"
+      },
+      "renamed": {},
+      "extra_columns": []
+    },
+    {
+      "gender": "men",
+      "table": "invalid_files",
+      "file": "invalid_files.csv",
+      "rows": 0,
+      "columns": [
+        "file",
+        "error"
+      ],
+      "detected_types": {
+        "file": "str",
+        "error": "str"
+      },
+      "renamed": {},
+      "extra_columns": []
+    },
+    {
+      "gender": "men",
+      "table": "data_quality_report",
+      "file": "data_quality_report.csv",
+      "rows": 10,
+      "columns": [
+        "metric",
+        "value"
+      ],
+      "detected_types": {
+        "metric": "str",
+        "value": "str"
+      },
+      "renamed": {},
+      "extra_columns": []
+    },
+    {
+      "gender": "women",
+      "table": "matches",
+      "file": "matches.csv",
+      "rows": 518,
+      "columns": [
+        "match_id",
+        "gender",
+        "date",
+        "match_type",
+        "competition",
+        "season",
+        "venue",
+        "city",
+        "team_1",
+        "team_2",
+        "winner",
+        "result_type"
+      ],
+      "detected_types": {
+        "match_id": "str",
+        "gender": "str",
+        "date": "date",
+        "match_type": "str",
+        "competition": "str",
+        "season": "str",
+        "venue": "str",
+        "city": "str",
+        "team_1": "str",
+        "team_2": "str",
+        "winner": "str",
+        "result_type": "str"
+      },
+      "renamed": {},
+      "extra_columns": []
+    },
+    {
+      "gender": "women",
+      "table": "deliveries",
+      "file": "deliveries.csv",
+      "rows": 119080,
+      "columns": [
+        "match_id",
+        "gender",
+        "date",
+        "competition",
+        "innings_number",
+        "batting_team",
+        "bowling_team",
+        "over",
+        "delivery_in_over",
+        "batter",
+        "non_striker",
+        "bowler",
+        "batter_runs",
+        "extras",
+        "total_runs",
+        "wides",
+        "no_balls",
+        "is_legal_delivery",
+        "is_wicket",
+        "dismissal_kinds",
+        "players_out"
+      ],
+      "detected_types": {
+        "match_id": "str",
+        "gender": "str",
+        "date": "date",
+        "competition": "str",
+        "innings_number": "int",
+        "batting_team": "str",
+        "bowling_team": "str",
+        "over": "int",
+        "delivery_in_over": "int",
+        "batter": "str",
+        "non_striker": "str",
+        "bowler": "str",
+        "batter_runs": "int",
+        "extras": "int",
+        "total_runs": "int",
+        "wides": "int",
+        "no_balls": "int",
+        "is_legal_delivery": "bool",
+        "is_wicket": "bool",
+        "dismissal_kinds": "str",
+        "players_out": "str"
+      },
+      "renamed": {},
+      "extra_columns": []
+    },
+    {
+      "gender": "women",
+      "table": "batting_innings",
+      "file": "batting_innings.csv",
+      "rows": 4368,
+      "columns": [
+        "match_id",
+        "gender",
+        "date",
+        "competition",
+        "innings_number",
+        "team",
+        "player",
+        "batting_position",
+        "runs",
+        "balls_faced",
+        "fours",
+        "sixes",
+        "strike_rate",
+        "dismissals",
+        "not_out",
+        "team_innings_runs",
+        "matches_played"
+      ],
+      "detected_types": {
+        "match_id": "str",
+        "innings_number": "int",
+        "team": "str",
+        "player": "str",
+        "batting_position": "int",
+        "runs": "int",
+        "balls_faced": "int",
+        "fours": "int",
+        "sixes": "int",
+        "dismissals": "int",
+        "not_out": "bool",
+        "team_innings_runs": "int"
+      },
+      "renamed": {},
+      "extra_columns": [
+        "date",
+        "competition",
+        "strike_rate",
+        "matches_played"
+      ]
+    },
+    {
+      "gender": "women",
+      "table": "bowling_innings",
+      "file": "bowling_innings.csv",
+      "rows": 3315,
+      "columns": [
+        "match_id",
+        "gender",
+        "date",
+        "competition",
+        "innings_number",
+        "team",
+        "player",
+        "runs_conceded",
+        "legal_balls",
+        "overs",
+        "wickets",
+        "economy",
+        "bowling_average",
+        "bowling_strike_rate",
+        "dot_balls",
+        "fours_conceded",
+        "sixes_conceded",
+        "team_innings_runs",
+        "matches_played"
+      ],
+      "detected_types": {
+        "match_id": "str",
+        "innings_number": "int",
+        "team": "str",
+        "player": "str",
+        "runs_conceded": "int",
+        "legal_balls": "int",
+        "wickets": "int",
+        "dot_balls": "int",
+        "fours_conceded": "int",
+        "sixes_conceded": "int"
+      },
+      "renamed": {},
+      "extra_columns": [
+        "date",
+        "competition",
+        "overs",
+        "economy",
+        "bowling_average",
+        "bowling_strike_rate",
+        "team_innings_runs",
+        "matches_played"
+      ]
+    },
+    {
+      "gender": "women",
+      "table": "partnerships",
+      "file": "partnerships.csv",
+      "rows": 3174,
+      "columns": [
+        "match_id",
+        "gender",
+        "innings_number",
+        "batting_team",
+        "partnership_number",
+        "player_1",
+        "player_2",
+        "runs",
+        "legal_balls",
+        "wickets"
+      ],
+      "detected_types": {
+        "match_id": "str",
+        "innings_number": "int",
+        "batting_team": "str",
+        "partnership_number": "int",
+        "player_1": "str",
+        "player_2": "str",
+        "runs": "int",
+        "legal_balls": "int",
+        "wickets": "int"
+      },
+      "renamed": {},
+      "extra_columns": []
+    },
+    {
+      "gender": "women",
+      "table": "player_match",
+      "file": "player_match.csv",
+      "rows": 5894,
+      "columns": [
+        "match_id",
+        "gender",
+        "team",
+        "player",
+        "batting_runs",
+        "batting_balls",
+        "bowling_wickets",
+        "bowling_runs_conceded",
+        "bowling_balls",
+        "matches_played",
+        "eligible"
+      ],
+      "detected_types": {
+        "match_id": "str",
+        "team": "str",
+        "player": "str",
+        "batting_runs": "float",
+        "batting_balls": "float",
+        "bowling_wickets": "float",
+        "bowling_runs_conceded": "float",
+        "bowling_balls": "float"
+      },
+      "renamed": {},
+      "extra_columns": [
+        "matches_played",
+        "eligible"
+      ]
+    },
+    {
+      "gender": "women",
+      "table": "player_appearances",
+      "file": "player_appearances.csv",
+      "rows": 1485,
+      "columns": [
+        "player",
+        "matches_played",
+        "eligible"
+      ],
+      "detected_types": {
+        "player": "str",
+        "matches_played": "int",
+        "eligible": "bool"
+      },
+      "renamed": {},
+      "extra_columns": []
+    },
+    {
+      "gender": "women",
+      "table": "excluded_players",
+      "file": "excluded_players.csv",
+      "rows": 1139,
+      "columns": [
+        "player",
+        "matches_played",
+        "eligible"
+      ],
+      "detected_types": {
+        "player": "str",
+        "matches_played": "int",
+        "eligible": "bool"
+      },
+      "renamed": {},
+      "extra_columns": []
+    },
+    {
+      "gender": "women",
+      "table": "invalid_files",
+      "file": "invalid_files.csv",
+      "rows": 0,
+      "columns": [
+        "file",
+        "error"
+      ],
+      "detected_types": {
+        "file": "str",
+        "error": "str"
+      },
+      "renamed": {},
+      "extra_columns": []
+    },
+    {
+      "gender": "women",
+      "table": "data_quality_report",
+      "file": "data_quality_report.csv",
+      "rows": 10,
+      "columns": [
+        "metric",
+        "value"
+      ],
+      "detected_types": {
+        "metric": "str",
+        "value": "str"
+      },
+      "renamed": {},
+      "extra_columns": []
+    }
+  ],
+  "reliability": {
+    "impact_split_half": {
+      "men/bat": {
+        "players": 345,
+        "spearman": 0.347
+      },
+      "men/bowl": {
+        "players": 355,
+        "spearman": 0.169
+      },
+      "men/pressure": {
+        "players": 404,
+        "spearman": 0.16
+      },
+      "men/winning": {
+        "players": 598,
+        "spearman": 0.171
+      },
+      "women/bat": {
+        "players": 158,
+        "spearman": 0.395
+      },
+      "women/bowl": {
+        "players": 174,
+        "spearman": 0.35
+      },
+      "women/pressure": {
+        "players": 156,
+        "spearman": 0.364
+      },
+      "women/winning": {
+        "players": 286,
+        "spearman": 0.3
+      }
+    },
+    "position_effectiveness_split_half": {
+      "men/lower": {
+        "players": 27,
+        "spearman": 0.292
+      },
+      "men/middle": {
+        "players": 181,
+        "spearman": 0.331
+      },
+      "men/top": {
+        "players": 186,
+        "spearman": 0.356
+      },
+      "women/middle": {
+        "players": 82,
+        "spearman": 0.437
+      },
+      "women/top": {
+        "players": 92,
+        "spearman": 0.486
+      }
+    }
+  },
+  "eligibility": {
+    "men": {
+      "eligible": 712,
+      "total": 2953
+    },
+    "women": {
+      "eligible": 346,
+      "total": 1430
+    }
+  }
+}

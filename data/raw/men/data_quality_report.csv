@@ -1,0 +1,11 @@
+﻿metric,value
+gender,mens
+json_files_found,1619
+valid_t20_matches,1075
+delivery_records,242594
+players_before_filter,3021
+players_retained_11_or_more_matches,712
+players_removed_10_or_fewer_matches,2309
+invalid_json_files,0
+excluded_not_t20,510
+excluded_the_hundred,34

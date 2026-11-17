@@ -1,0 +1,8 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    { "name": "CRICKET IQ: process data", "type": "debugpy", "request": "launch", "program": "${workspaceFolder}/run.py", "console": "integratedTerminal" },
+    { "name": "CRICKET IQ: start dashboard", "type": "debugpy", "request": "launch", "program": "${workspaceFolder}/run.py", "args": ["serve"], "console": "integratedTerminal" },
+    { "name": "CRICKET IQ: process + dashboard", "type": "debugpy", "request": "launch", "program": "${workspaceFolder}/run.py", "args": ["all"], "console": "integratedTerminal" }
+  ]
+}
