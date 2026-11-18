@@ -1,4 +1,5 @@
 # 🏏 CRICKET IQ — Cricket Impact & Performance Intelligence
+Check Out the Live Dashboard: https://mubashir2003.github.io/CRICKET-IQ-Impact-Performance-Intelligence/dashboard/#/overview
 
 A cricket analytics platform for **men's and women's T20 cricket in 2026**. It goes beyond scorecards to measure how much each player contributes to team performance, winning, handling pressure and fulfilling roles.
 
